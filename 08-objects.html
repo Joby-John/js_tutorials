@@ -25,6 +25,26 @@
 
         delete product.newProperty;
         console.log(product);
+
+
+        product1 = {
+            name: 'shirt',
+            'delivery-time': '1 day', //use ' ' for seperated words
+            rating:{
+                star: 4.5,
+                count: 87
+            },
+            fun: function function1()//function inside an object is called method. console.log() is also an example.
+            {
+                console.log('Function inside object');
+            }
+        }
+
+        console.log(product1['name']);
+        console.log(product1['delivery-time']);
+        console.log(product1.rating.count);
+        console.log(product1['rating']['star']);
+        product1.fun(); //function inside an object is called method.console.log() is also an example.
     </script>
 </body>
 </html>
