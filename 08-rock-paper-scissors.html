@@ -23,17 +23,21 @@
     score.loses = 0;
     score.wins = 0;
     score.ties = 0;
+    localStorage.removeItem('score');
     ">
     Reset Score
   </button>
 
   <script>
 
-    const score = {
-        wins: 0,
-        loses:0,
-        ties:0
-    }
+    const score = JSON.parse(localStorage.getItem
+    ('score')) ||{
+        wins:0,
+        ties:0,
+        loses:0
+        } //using boolean shortcuts as || is the default operator
+
+
     function playGame(playerMove)
     {
       const computerMove = pickComputerMove();
@@ -94,6 +98,8 @@
       {
         score.ties++;
       }
+
+      localStorage.setItem('score', JSON.stringify(score));
 
       alert(`You picked ${playerMove}. Computer Picked ${computerMove}. ${result} 
       \n Wins:  ${score.wins}
