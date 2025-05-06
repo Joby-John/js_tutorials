@@ -54,6 +54,35 @@
         console.log(jsonString);
         const jsObject = JSON.parse(jsonString);
         console.log(jsObject);
+
+        const object4 = {
+            message: 'hello',
+            numberOfChars: 5
+        }
+
+        const object5 = object4;
+        const{message, numberOfChars} = object5;
+
+        console.log(message);
+        console.log(numberOfChars);
+
+        //shorthand property
+        object6 = {
+            //message : message, //message propert is assigned value of variable message this can be shorthanded if both have same value
+            message,
+
+            //method showrt hand is as ->
+            // method: function function1()
+            // {
+            //     console.log('method');
+            // }
+            method()
+            {
+                console.log('method');
+            }
+        };
+        console.log(object6);
+        object6.method();
     </script>
 </body>
 </html>
